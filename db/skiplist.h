@@ -269,6 +269,7 @@ typename SkipList<Key,Comparator>::Node* SkipList<Key,Comparator>::FindGreaterOr
       // Keep searching in this list
       x = next;
     } else {
+      //set the prev pointer equal the x pointer which the key is less than key para for each level
       if (prev != NULL) prev[level] = x;
       if (level == 0) {
         return next;
