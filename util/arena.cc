@@ -46,6 +46,7 @@ char* Arena::AllocateAligned(size_t bytes) {
   size_t needed = bytes + slop;
   char* result;
   if (needed <= alloc_bytes_remaining_) {
+    //set the memory aligne for previous memory allocation 
     result = alloc_ptr_ + slop;
     alloc_ptr_ += needed;
     alloc_bytes_remaining_ -= needed;
